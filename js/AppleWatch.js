@@ -26,15 +26,18 @@ export default class AppleWatch {
                 return undefined
         }
     }
-    setTimezone(city) {
+    setCity(city) {
         clearInterval(this.interval);
         this.city = city;
         this.init()
     }
-    changeWatchFaceBackground(location) {
+    /**
+     * Change the watch face background by adding the city as a class
+     */
+    changeWatchFaceBackground(city) {
         const watchFace = document.getElementById('watch-face');
         watchFace.className = '';
-        watchFace.classList.add(location);
+        watchFace.classList.add(city);
     }
     returnCurrentDate() {
         const today = new Date();
@@ -53,7 +56,12 @@ export default class AppleWatch {
     updateActiveLocation(location) {
         document.querySelector('#active-location').innerHTML = location.replace(/-/g, ' ');
     }
+    /**
+     * Time format input is MM/DD/YY AM/PM
+     * @param {*} time 
+     */
     updateCurrentTime(time) {
+        // Split the format so that we can add a span around the am/pm for styling
         const formattedTime = time.split(' ');
         document.querySelector('#current-time').innerHTML = `${formattedTime[0]} <span>${formattedTime[1]}</span>`;
     }

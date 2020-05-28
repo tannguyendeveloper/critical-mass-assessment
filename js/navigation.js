@@ -80,7 +80,7 @@ const Navigation = async function () {
         navSectionIndicator.setIndicatorPosition(activeLink.getBoundingClientRect());
     }
 
-    function updateWatch(timezone) {
-        appleWatch.setTimezone(timezone);
+    function updateWatch(city) {
+        appleWatch.setCity(city);
     }
 }()
