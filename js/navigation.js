@@ -70,7 +70,7 @@ const Navigation = async function () {
     function handleNavItemClick(e) {
         unsetActiveNavLinks();
         setNavLinkActive(e.target);
-        updateClock(e.target.dataset.city);
+        updateWatch(e.target.dataset.city);
         if(navUl.classList.contains('show')) hideMenu();
     }
 
@@ -80,7 +80,7 @@ const Navigation = async function () {
         navSectionIndicator.setIndicatorPosition(activeLink.getBoundingClientRect());
     }
 
-    function updateClock(timezone) {
+    function updateWatch(timezone) {
         appleWatch.setTimezone(timezone);
     }
 }()

@@ -2,6 +2,9 @@ export default class NavSectionIndicator {
     constructor(parentId) {
         this.parentId = parentId;
     }
+    /**
+     * Uses DOMRect object to set offset and width of the position indicator
+     */
     setIndicatorPosition(DOMRect) {
         this.setIndicatorOffsetX(DOMRect.left);
         this.setIndicatorWidth(DOMRect.width);
