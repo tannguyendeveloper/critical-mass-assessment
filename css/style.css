@@ -1,0 +1,217 @@
+html,
+body {
+    padding: 0 0;
+    margin: 0 0;
+}
+
+nav#nav {
+    width: 100%;
+    margin-bottom: 2em;
+}
+
+nav#nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+    padding: 0 0;
+    margin: 0 0;
+}
+
+nav#nav ul li {
+    display: flex;
+    flex-basis: 15%;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+    transition-duration: 200ms;
+}
+
+nav#nav ul li#menu-btn-container {
+    display: none;
+}
+
+nav#nav ul li a {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    text-decoration: none;
+    color: #959594;
+    padding: 1em 0;
+    font-family: "SF Pro Text", "Myriad Set Pro", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+}
+
+nav#nav ul li a:hover {
+    color: #1362a2;
+}
+
+nav#nav ul li a.active {
+    color: #000000;
+}
+
+span.section-indicator-container {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 1px;
+    background-color: #d5d5d4;
+}
+
+span.section-indicator-container span.section-indicator {
+    display: block;
+    position: absolute;
+    background-color: #000000;
+    width: 0px;
+    left: 0;
+    height: 1px;
+    transition-duration: 200ms;
+}
+
+#watch {
+    width: 100%;
+    max-width: 300px;
+    display: block;
+    margin: 0 auto;
+    position: relative;
+}
+
+#watch::after {
+    content: '';
+    display: block;
+    width: 100%;
+    position: relative;
+    top: 0;
+    left: 0;
+    padding-bottom: 171%;
+    background-image: url('../images/Apple-Watch-Series-5---white-band.jpg');
+    background-size: contain;
+}
+
+#watch #watch-face {
+    position: absolute;
+    display: flex;
+    width: 73%;
+    height: 52%;
+    margin-top: 40.5%;
+    left: 11%;
+    border: 1px solid #000000;
+    z-index: 9999999;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: space-between;
+    align-items: center;
+    font-family: "SF Pro Text", "Myriad Set Pro", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+    background-size: cover;
+    background-position: center center;
+    border-radius: 10%;
+    color: #ffffff;
+    z-index: 999999;
+    text-shadow: 1px 1px 0px #000;
+}
+
+#watch #watch-face::after {
+    content: '';
+    background: rgb(0,0,0);
+    background: linear-gradient(190deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,.65) 100%);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: -1;
+}
+
+#watch #watch-face.cupertino {
+    background-image: url('../images/cupertino.jpg')
+}
+#watch #watch-face.new-york-city {
+    background-image: url('../images/new-york-city.jpg')
+}
+#watch #watch-face.london {
+    background-image: url('../images/london.jpg')
+}
+#watch #watch-face.amsterdam {
+    background-image: url('../images/amsterdam.jpg')
+}
+#watch #watch-face.tokyo {
+    background-image: url('../images/tokyo.jpg')
+}
+#watch #watch-face.hong-kong {
+    background-image: url('../images/hong-kong.jpg')
+}
+#watch #watch-face.sydney {
+    background-image: url('../images/sydney.jpg')
+}
+
+#watch #active-location {
+    text-align: center;
+    text-transform: capitalize;
+    flex-basis: 100%;
+}
+
+#watch #watch-face #current-time {
+    text-align: center;
+    font-size: 2rem;
+    flex-basis: 100%;
+}
+
+#watch #watch-face #current-time span {
+    font-size: .75rem;
+
+}
+
+#watch #watch-face #current-date {
+    flex-basis: 100%;
+    text-align: center;
+}
+
+@media screen and (max-width: 480px) {
+    nav#nav ul {
+        flex-flow: column; 
+        
+    }
+    nav#nav ul li {
+        display: flex;
+        flex-basis: auto;
+        width: 100%;
+        font-size: .8rem;
+    }
+    nav#nav ul:not(.show) li:not(.active):not(#menu-btn-container) {
+        transition-duration: 0ms;
+        opacity: 0;
+        height: 0;
+    }
+    nav#nav ul li#menu-btn-container {
+        display: flex;
+        position: absolute;
+        width: 3em;
+        height: 3em;
+        float: left;
+        cursor: pointer;
+        top: 0;
+    }
+    span.section-indicator-container span.section-indicator {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+    nav#nav ul li {
+        font-size: .75rem;
+    }
+    nav#nav ul li#menu-btn-container {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 767px) and (max-width: 992px) {
+    nav#nav ul li#menu-btn-container {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 993px) and (max-width: 1200px) {
+    nav#nav ul li#menu-btn-container {
+        display: none;
+    }
+}
